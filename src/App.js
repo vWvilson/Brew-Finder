@@ -1,28 +1,51 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router, Route,
+  Link} 
+  from 'react-router-dom';
+import Toolbar from './components/Toolbar/Toolbar';
+import SideDrawer from './components/SideDrawer/SideDrawer';
+import Backdrop from './components/Backdrop/Backdrop';
+import SimpleMap from './components/GoogleMap/GoogleMap';
+import SignUpForm from './components/SignUpForm/SignUpForm';
+
 
 class App extends Component {
+      state ={
+        SideDrawerOpen:false
+      }
+
+      drawerToggleClickHnadler = () => {
+        this.setState((prevState)=> {
+          return {SideDrawerOpen:!prevState.SideDrawerOpen}
+        })
+      }
+      backdropClickHandler = () => {
+        this.setState({SideDrawerOpen:false})
+      }
   render() {
+    let backdrop;
+
+    if(this.state.SideDrawerOpen) {
+      
+      backdrop = < Backdrop click={this.backdropClickHandler} />
+    }
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      
+      <div style ={{height:'100%'}}>
+      <Toolbar drawerClickHandler={this.drawerToggleClickHnadler} />
+      <SideDrawer show= {this.state.SideDrawerOpen}/>
+
+      {backdrop}
+      <main className = 'main'style = {{marginTop:'56px'}}> 
+        <p>This is the page content</p>
+
+        < SimpleMap />
+      </main>
       </div>
     );
   }
 }
+
 
 export default App;
