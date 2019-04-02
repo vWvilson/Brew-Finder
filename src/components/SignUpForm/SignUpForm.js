@@ -12,7 +12,6 @@ const signUpForm = props => (
     </form>
 
 
-
 )
 
 

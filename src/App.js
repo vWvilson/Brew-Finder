@@ -15,37 +15,40 @@ class App extends Component {
         SideDrawerOpen:false
       }
 
-      drawerToggleClickHnadler = () => {
+      drawerToggleClickHandler = () => {
         this.setState((prevState)=> {
           return {SideDrawerOpen:!prevState.SideDrawerOpen}
-        })
+        }
+       )
       }
       backdropClickHandler = () => {
         this.setState({SideDrawerOpen:false})
       }
+
   render() {
     let backdrop;
 
     if(this.state.SideDrawerOpen) {
-      
       backdrop = < Backdrop click={this.backdropClickHandler} />
     }
+    
     return (
       
-      <div style ={{height:'100%'}}>
-      <Toolbar drawerClickHandler={this.drawerToggleClickHnadler} />
-      <SideDrawer show= {this.state.SideDrawerOpen}/>
+    <div style ={{height:'100%'}}>
+       <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+       <SideDrawer show= {this.state.SideDrawerOpen}/>
+        {backdrop}
 
-      {backdrop}
       <main className = 'main'style = {{marginTop:'56px'}}> 
         <p>This is the page content</p>
-
         < SimpleMap />
       </main>
-      </div>
-    );
+    </div>
+      );
+    }
   }
-}
+      
+
 
 
 export default App;
