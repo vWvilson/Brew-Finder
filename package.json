@@ -10,6 +10,7 @@
     "google-maps-react": "^2.0.2",
     "mongoose": "^5.4.19",
     "react": "^16.8.5",
+    "react-axios": "^2.0.3",
     "react-dom": "^16.8.5",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^5.0.0",

@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router, Route,
-  Link} 
-  from 'react-router-dom';
+
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
-import SimpleMap from './components/GoogleMap/GoogleMap';
-import SignUpForm from './components/SignUpForm/SignUpForm';
+// import SimpleMap from './components/GoogleMap/GoogleMap';
+// import SignUpForm from './components/SignUpForm/SignUpForm';
+import BreweryMap from './components/BreweryMap/BreweryMap'
 
 
 class App extends Component {
@@ -41,7 +39,8 @@ class App extends Component {
 
       <main className = 'main'style = {{marginTop:'56px'}}> 
         <p>This is the page content</p>
-        < SimpleMap />
+        {/* < SimpleMap /> */}
+        < BreweryMap />
       </main>
     </div>
       );

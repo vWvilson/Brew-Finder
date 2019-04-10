@@ -10,6 +10,8 @@
 }
 .toolbar_logo {
     margin-left: 1rem;
+    font-size: 2rem;
+
 }
 .toolbar_navigation {
     display: flex;
@@ -43,7 +45,6 @@ text-decoration: none;
 .toolbar_logo a {
 color:#F3E367;
 text-decoration: none;
-font-size: 2rem;
 
 }
 
