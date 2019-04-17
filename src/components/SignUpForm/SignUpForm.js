@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Toolbar from '../Toolbar/Toolbar';
+// import BreweryMap from '../BreweryMap/BreweryMap'
 import './SignUpForm.css';
 
 
@@ -29,6 +31,9 @@ export default class SignUpForm extends Component {
     
     render () {
     return (
+        <div>
+        <Toolbar />
+
     <form onSubmit = {this.handleSubmit} className = 'sign-up-form'>
         
         <input 
@@ -54,6 +59,7 @@ export default class SignUpForm extends Component {
         <button>Submit</button>
     </form>
 
+    </div>
     )
 }
 }

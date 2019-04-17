@@ -1,8 +1,12 @@
 import React from 'react';
 import '../SignUpForm/SignUpForm.css'
+import Toolbar from '../Toolbar/Toolbar';
+
 
 
 const contact = props => (
+    <div>
+        <Toolbar />
     <form className = 'sign-up-form'>
         <input type="text" name = "Name" placeholder = "Name (optional)"/>
         <input type="text" name = "Email" placeholder = "Email (optional)"/>
@@ -10,6 +14,7 @@ const contact = props => (
         <textarea type="text" name = "message" placeholder = "Message"/>
         <button>Submit</button>
     </form>
+    </div>
 
 
 )
