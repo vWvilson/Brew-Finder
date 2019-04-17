@@ -1,18 +1,60 @@
-import React from 'react';
-import './SignUpForm.css'
+import React, {Component} from 'react';
+import './SignUpForm.css';
 
 
-const signUpForm = props => (
-    <form className = 'sign-up-form'>
-        <input type="text" name = "First Name" placeholder = "First Name"/>
-        <input type="text" name = "Last Name" placeholder = "Last Name"/>
-        <input type="text" name = "User Name" placeholder = "User Name"/>
-        <input type="text" name = "Email" placeholder = "Email"/>
+export default class SignUpForm extends Component {
+    state = {
+        username : "",
+        password : "",
+        email : ""
+
+    }
+    handleChange = (event) => {
+        this.setState({
+           [event.target.name]:event.target.value
+        })
+        console.log(this.state.username)
+        
+    }
+
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        alert("handle submit" + this.state.value)
+       
+
+    }
+
+        
+    
+    render () {
+    return (
+    <form onSubmit = {this.handleSubmit} className = 'sign-up-form'>
+        
+        <input 
+        type="text" 
+        name = "username" 
+        value = {this.state.username}
+        onChange = {this.handleChange}
+        placeholder = "User Name"/>
+
+        <input 
+        type="text" 
+        name = "email" 
+        value = {this.state.email}
+        onChange = {this.handleChange}
+        placeholder = "Email"/>
+
+        <input 
+        type="text" 
+        name = "password" 
+        value = {this.state.password}
+        onChange = {this.handleChange}
+        placeholder = "Password"/>
         <button>Submit</button>
     </form>
 
+    )
+}
+}
 
-)
-
-
-export default signUpForm

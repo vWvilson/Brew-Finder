@@ -1,7 +1,9 @@
 import React from 'react';
 import './Toolbar.css'
-import '../SideDrawer/DrawerToggleButton'
-import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
+import '../Sidebar/SideDrawer/DrawerToggleButton'
+import DrawerToggleButton from '../Sidebar/SideDrawer/DrawerToggleButton';
+import {Link} from 'react-router-dom';
+
 
 
 const toolbar = props => (
@@ -14,10 +16,10 @@ const toolbar = props => (
             <div className = 'spacer' />
             <div className = 'toolbar_navigation_items'>
                 <ul>
-                    <li><a a href  = '/'>Breweries</a></li>
-                    <li><a a href  = '/'>Your Brews</a></li>
-                    <li><a a href  = '/'>Log In</a></li>
-                    <li><a a href  = '/'>Contact</a></li>
+                    <li><Link to = '/'>Home</Link></li>
+                    <li><Link to = '/'>Your Brews</Link></li>
+                    <li><Link to  = '/signup'>Sign Up</Link></li>
+                    <li><Link to = '/contact'>Contact</Link></li>
 
 
                 </ul>
