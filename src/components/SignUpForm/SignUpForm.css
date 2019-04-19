@@ -18,7 +18,9 @@ form {
   z-index: 100;
 }
 
-      
+h3 {
+  text-align: center
+}
       textarea,input[type="text"] {
         display: block;
         padding: 0.5rem 0.75rem;

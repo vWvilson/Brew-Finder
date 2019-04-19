@@ -31,7 +31,7 @@ class BreweryMap extends Component {
 
 
         }
-        
+
 
         axios.get(endPoint + new URLSearchParams(parameters))
         .then(response =>{
@@ -39,7 +39,8 @@ class BreweryMap extends Component {
                 venues: response.data.response.groups[0].items
             } , this.renderMap()
             )
-           
+            console.log(this.state.venues)
+
         })
         .catch(error => {
             console.log("ERROR" + error)
@@ -53,6 +54,8 @@ class BreweryMap extends Component {
         const map = new window.google.maps.Map(document.getElementById('map'), {
           center: {lat: 30.307182, lng: -97.755996},
           zoom: 11
+
+
         });
 
         // create info window
@@ -73,6 +76,7 @@ class BreweryMap extends Component {
                 position: {lat: myVenue.venue.location.lat, lng:myVenue.venue.location.lng},
                 map: map,
                 animation:window.google.maps.Animation.DROP,
+
                 title: myVenue.venue.name
               });
             //   change the content
