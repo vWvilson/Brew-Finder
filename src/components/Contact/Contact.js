@@ -5,8 +5,8 @@ import Toolbar from '../Toolbar/Toolbar';
 
 
 const contact = props => (
-    <div>
-        <Toolbar />
+<React.Fragment>        
+    <Toolbar />
     <form className = 'sign-up-form'>
         <h3>Contact us</h3>
         <input type="text" name = "Name" placeholder = "Name (optional)"/>
@@ -15,7 +15,7 @@ const contact = props => (
         <textarea type="text" name = "message" placeholder = "Message"/>
         <button>Submit</button>
     </form>
-    </div>
+    </React.Fragment>
 
 
 )

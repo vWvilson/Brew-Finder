@@ -38,7 +38,7 @@
     color: burlywood;
 }
 
-@media(min-width: 769) {
+/* @media(min-width: 769) {
     .side-drawer {
         display: none;
     }
@@ -47,4 +47,4 @@
     .side-drawer{
         box-shadow: none;
     }
-}
+} */

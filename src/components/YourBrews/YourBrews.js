@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react';
 import Select from 'react-select'
 import Toolbar  from '../Toolbar/Toolbar'
+
 
 const brewery = [
   { value: 'zilker', label: 'Zilker Brewing Co.' },
@@ -35,22 +36,40 @@ const brewery = [
   
 
 
-const yourBrews = () => (
- <div>
-   <Toolbar />
+export default class YourBrews  extends Component {
+  state = {
+    selectedOption: null,
+    favoriteBeer: ""
+  }
+   
+  handleChange = (selectedOption) => {
+    this.setState({ selectedOption });
+    console.log(`Option selected:`, selectedOption);
+  }
+
+
+
+  render() {
+    const { selectedOption } = this.state;
+
+    return (
+  <React.Fragment>  
+    <Toolbar />
       <form>
           <h3>Select a brewery and enter a favorite beer</h3>
-        <Select options={brewery} />
+        <Select value={selectedOption}
+        onChange={this.handleChange} options={brewery} />
          <input type="text" placeholder="favorite beer"></input>
          <button>add to favorites</button>
       </form>
-</div>
-)
+</React.Fragment>  
+    
+
+    )}
+}
 
 
 
-
-export default yourBrews;
 
 
 

@@ -8,6 +8,7 @@ const morgan = require('morgan')
 // logger
 app.use(morgan('dev'))
 
+const SigninRoutes = require("./routes/signin.routes");
 
 const SignupRoutes = require("./routes/signup.routes");
 const BrewRoutes = require("./routes/signup.routes");
@@ -24,7 +25,9 @@ const bodyParser = require("body-parser");
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/signup", SignupRoutes)
+app.use("/signin", SigninRoutes)
 app.use("/brews", BrewRoutes)
+
 
 const port = process.env.PORT || 3002;
 

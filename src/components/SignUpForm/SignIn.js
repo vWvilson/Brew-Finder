@@ -1,16 +1,14 @@
 import React, {Component} from 'react';
 import Toolbar from '../Toolbar/Toolbar';
-// import BreweryMap from '../BreweryMap/BreweryMap'
 import './SignUpForm.css';
 import axios from 'axios';
 
 
 
-export default class SignUpForm extends Component {
+export default class SignIn extends Component {
     state = {
         username : "",
         password : "",
-        email : "" 
 
     }
     handleChange = (event) => {
@@ -27,9 +25,9 @@ export default class SignUpForm extends Component {
 
 
 
-        const {username, password,email} = this.state;
-        axios.post("http://localhost:3002/signup/create", { username, password, email }).then(result => {
-            console.log(result);
+        const {username, password} = this.state;
+        axios.post("http://localhost:3002/signup/login", { username, password, }).then(result => {
+            console.log("im in");
           });
 
     }
@@ -38,13 +36,13 @@ export default class SignUpForm extends Component {
     
     
     render () {
-        const {username, password,email} = this.state;
+        const {username, password} = this.state;
 
     return (
     <React.Fragment>
      <Toolbar />
         <form method ="post" action = "/signup" onSubmit = {this.handleSubmit} className = 'sign-up-form'>
-            <h3>Create your account</h3>
+            <h3>Sign in to your account</h3>
             <input 
               type="text" 
               name = "username" 
@@ -52,12 +50,6 @@ export default class SignUpForm extends Component {
               onChange = {this.handleChange}
             placeholder = "User Name"/>
 
-            <input 
-              type="text" 
-              name = "email" 
-              value= {email}
-              onChange = {this.handleChange}
-              placeholder = "Email"/>
 
              <input 
                type="text" 
@@ -65,7 +57,7 @@ export default class SignUpForm extends Component {
                value = {password}
                onChange = {this.handleChange}
                placeholder = "Password"/>
-            <button>Submit</button>
+            <button>Sign In</button>
         </form>
     </React.Fragment>
         

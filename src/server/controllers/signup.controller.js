@@ -13,6 +13,14 @@ exports.user_create = function (req, res) {
             password: req.body.password
         }
     );
+    console.log("create user")
+
+    console.log(signup.username)
+    console.log(signup.email)
+    console.log(signup.password)
+
+
+
     signup.save(function (err) {
         if (err) {
             return (err);
@@ -41,3 +49,18 @@ exports.user_delete = function (req, res) {
         res.send('Deleted successfully!');
     })
 };
+exports.login = function login(req, res) {
+    Signup.findOne({
+    username: req.body.username, 
+    password: req.body.password
+    }, function(err, doc){
+    if(err || !doc){
+    res.send(403)
+    return
+    }
+    
+    res.sendStatus(200)
+    
+    })
+    
+    }
