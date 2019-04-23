@@ -11,7 +11,7 @@ app.use(morgan('dev'))
 const SigninRoutes = require("./routes/signin.routes");
 
 const SignupRoutes = require("./routes/signup.routes");
-const BrewRoutes = require("./routes/signup.routes");
+const BrewRoutes = require("./routes/brew.routes")
 
 const dev_db_url = 'mongodb://user:user123@ds139946.mlab.com:39946/brewfinder'
 const mongoDB = process.env.MONGODB_URI || dev_db_url

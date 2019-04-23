@@ -14,7 +14,7 @@ class BreweryMap extends Component {
     }
 
     renderMap =()=> {
-        loadScript( "https://maps.googleapis.com/maps/api/js? key=AIzaSyCfD5CdTO_-teb1j8dvEhBdvTTykcSGRNA&callback=initMap")
+        loadScript( "https://maps.googleapis.com/maps/api/js? key=AIzaSyDjD-QmoPcvOaMKv4qUcSkmANZSzq82bWs&callback&callback=initMap")
         window.initMap = this.initMap;
     }
     

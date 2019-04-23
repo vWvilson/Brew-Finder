@@ -8,6 +8,8 @@ import SignUpForm from './components/SignUpForm/SignUpForm';
 import Contact from './components/Contact/Contact';
 import YourBrews from './components/YourBrews/YourBrews'
 import SignIn from './components/SignUpForm/SignIn'
+import BrewList from './components/BrewList/BrewList'
+
 
 const routing = (
     <Router>
@@ -17,6 +19,8 @@ const routing = (
         <Route path="/signup" component={SignUpForm} />
         <Route path="/contact" component={Contact} />
         <Route path="/brews" component={YourBrews} />
+        <Route path="/list" component={BrewList} />
+
       </Switch>
     </Router>
   )

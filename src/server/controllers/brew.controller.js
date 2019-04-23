@@ -4,6 +4,12 @@ const Brew = require("../models/brew.model");
 exports.test = function (req, res) {
     res.send('Test is working');
 };
+exports.list = function list(request, response) {
+    Brew.find(function (err, brews) {
+      if (err) return console.error(err)        
+      return response.json(brews)
+    })
+  }
 
 exports.brew_create = function (req, res) {
     let brew = new Brew(

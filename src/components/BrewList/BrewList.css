@@ -1,0 +1,34 @@
+.container{
+  padding: 3rem  3rem ;
+}
+.beerlist {
+  width: 250px;                 /* Set width of cards */
+  border: 1px solid #f5d38e;    /* Set up Border */
+  border-radius: 4px;           /* Slightly Curve edges */
+  overflow: hidden;             /* Fixes the corners */
+  display: flex;                /* Children use Flexbox */
+  flex-direction: column;  
+  justify-content: center;
+  background-color:white;
+}
+.beerlist-header {
+    color: black;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid #f5d38e;
+    background-color: #ffc142;
+    padding: 5px 10px;
+  }
+  .main {
+      
+    display: flex;              /* Children use Flexbox */
+    flex-direction: column;     /* Rotate Axis to Vertical */
+    justify-content: center;    /* Group Children in Center */
+    align-items: center;        /* Group Children in Center (+axis) */
+    padding: 15px 0;            /* Add padding to the top/bottom */
+  }
+
+
+li {
+    list-style-type: none;}
