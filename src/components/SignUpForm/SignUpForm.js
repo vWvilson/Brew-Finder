@@ -3,6 +3,8 @@ import Toolbar from '../Toolbar/Toolbar';
 // import BreweryMap from '../BreweryMap/BreweryMap'
 import './SignUpForm.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -65,7 +67,9 @@ export default class SignUpForm extends Component {
                value = {password}
                onChange = {this.handleChange}
                placeholder = "Password"/>
-            <button>Submit</button>
+            <button>Create Account</button>
+           <Link to = "/signin"> <button>Sign In</button> </Link>
+
         </form>
     </React.Fragment>
         

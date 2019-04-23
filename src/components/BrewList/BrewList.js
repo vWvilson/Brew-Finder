@@ -1,6 +1,8 @@
 import React from 'react';
 import "../BrewList/BrewList.css"
 import axios from 'axios';
+import ToolBar from "../Toolbar/Toolbar"
+// import beermap from "../Images/beermap.PNG"
 
 export default class BrewList extends React.Component {
   state = {
@@ -20,10 +22,14 @@ export default class BrewList extends React.Component {
     return (
 
     <React.Fragment>
+      <ToolBar />
+      <div className="picContainer">
+      {/* < img src = {beermap}   alt = "map"/> */}
+      </div>
       <div className = "container">
       <div className = "beerlist">
       <div className = "beerlist-header">Your Favorites</div>
-      <div className = "main">
+      <div className = "breweryBeers">
         { this.state.beers.map(beers =>
         <React.Fragment>
         <h3><li>{beers.brewery}</li></h3>

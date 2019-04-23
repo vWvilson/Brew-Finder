@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Select from 'react-select'
 import Toolbar  from '../Toolbar/Toolbar'
 import "../YourBrews/YourBrews.css"
+import { Link } from 'react-router-dom';
+
 
 
 const brewery = [
@@ -47,7 +49,9 @@ export default class YourBrews  extends Component {
     this.setState({ selectedOption });
     console.log(`Option selected:`, selectedOption);
   }
+  handleOnclick = () => {
 
+  }
 
 
   render() {
@@ -61,7 +65,7 @@ export default class YourBrews  extends Component {
         <Select value={selectedOption}
         onChange={this.handleChange} options={brewery} />
          <input type="text" placeholder="favorite beer"></input>
-         <button>add to favorites</button>
+         <Link to = "/list"><button>add to favorites</button></Link>
       </form>
 </React.Fragment>  
     

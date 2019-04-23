@@ -1,16 +1,17 @@
-.container{
-  padding: 3rem  3rem ;
-}
-.beerlist {
-  width: 250px;                 /* Set width of cards */
-  border: 1px solid #f5d38e;    /* Set up Border */
-  border-radius: 4px;           /* Slightly Curve edges */
-  overflow: hidden;             /* Fixes the corners */
-  display: flex;                /* Children use Flexbox */
+ .beerlist {
+  width: 250px;                 
+  border: 1px solid #f5d38e;    
+  border-radius: 4px;           
+  overflow: hidden;             
+  display: flex;                
   flex-direction: column;  
   justify-content: center;
   background-color:white;
-}
+  margin-top: 8rem;
+  margin-left: 1.3rem;
+  /* z-index: 2;
+  position: absolute; */
+} 
 .beerlist-header {
     color: black;
     text-align: center;
@@ -20,15 +21,22 @@
     background-color: #ffc142;
     padding: 5px 10px;
   }
-  .main {
+  .breweryBeers {
       
-    display: flex;              /* Children use Flexbox */
-    flex-direction: column;     /* Rotate Axis to Vertical */
-    justify-content: center;    /* Group Children in Center */
-    align-items: center;        /* Group Children in Center (+axis) */
-    padding: 15px 0;            /* Add padding to the top/bottom */
+    display: flex;              
+    flex-direction: column;     
+    justify-content: center;    
+    align-items: center;        
+    padding: 15px 0;
   }
-
+.frames {
+  margin :0;
+  justify-content: center;
+}
 
 li {
-    list-style-type: none;}
+    list-style-type: none;}  
+  /* img {
+    z-index: 100;
+    position: relative;
+  } */
