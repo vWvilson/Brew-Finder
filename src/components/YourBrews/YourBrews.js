@@ -3,6 +3,7 @@ import Select from 'react-select'
 import Toolbar  from '../Toolbar/Toolbar'
 import "../YourBrews/YourBrews.css"
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 
 
 
@@ -42,30 +43,56 @@ const brewery = [
 export default class YourBrews  extends Component {
   state = {
     selectedOption: null,
-    favoriteBeer: ""
+    beer: ""
   }
    
   handleChange = (selectedOption) => {
     this.setState({ selectedOption });
     console.log(`Option selected:`, selectedOption);
   }
-  handleOnclick = () => {
+  handleInputChange = (event) => {
+    this.setState({
+      [event.target.name]:event.target.value
+   })
+   console.log(this.state)
+  }
 
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    const {selectedOption,beer} = this.state;
+    axios.post("http://localhost:3002/brews/create", { selectedOption, beer}).then(result => {
+        console.log(result);
+      });
   }
 
 
   render() {
-    const { selectedOption } = this.state;
+    const { selectedOption,beer } = this.state;
 
     return (
   <React.Fragment>  
     <Toolbar />
-      <form>
+    <form method ="post" action = "/brews" onSubmit = {(event)=>this.handleSubmit(event)} className = 'add-brews'>
+
           <h3>Select a brewery and enter a favorite beer</h3>
-        <Select value={selectedOption}
-        onChange={this.handleChange} options={brewery} />
-         <input type="text" placeholder="favorite beer"></input>
-         <Link to = "/list"><button>add to favorites</button></Link>
+
+        <Select 
+        value={selectedOption}
+        name="selectedOption"
+        onChange={(selectedOption)=>this.handleChange(selectedOption)} 
+        options={brewery} />
+
+         <input onChange = {(event) => this.handleInputChange(event)}
+          name = "beer" 
+          type="text" 
+          placeholder="favorite beer" 
+          value = {beer}/>
+ 
+
+         <button>add to favorites</button>
+         <Link to = "/list"><button>your beer list</button></Link>
       </form>
 </React.Fragment>  
     
@@ -77,5 +104,5 @@ export default class YourBrews  extends Component {
 
 
 
-
+// i am still having trouble getting the react-select to work with mlab
 

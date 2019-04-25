@@ -3,7 +3,6 @@ import '../SignUpForm/SignUpForm.css'
 import Toolbar from '../Toolbar/Toolbar';
 
 
-
 const contact = props => (
 <React.Fragment>        
     <Toolbar />

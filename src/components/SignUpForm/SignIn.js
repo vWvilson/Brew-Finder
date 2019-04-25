@@ -41,13 +41,13 @@ export default class SignIn extends Component {
     return (
     <React.Fragment>
      <Toolbar />
-        <form method ="post" action = "/signup" onSubmit = {this.handleSubmit} className = 'sign-up-form'>
+        <form method ="post" action = "/signup" onSubmit = {(event)=>this.handleSubmit(event)} className = 'sign-up-form'>
             <h3>Sign in to your account</h3>
             <input 
               type="text" 
               name = "username" 
               value = {username}
-              onChange = {this.handleChange}
+              onChange = {(event) => this.handleChange(event)}
             placeholder = "User Name"/>
 
 
@@ -55,7 +55,7 @@ export default class SignIn extends Component {
                type="text" 
                name = "password" 
                value = {password}
-               onChange = {this.handleChange}
+               onChange = {(event) => this.handleChange(event)}
                placeholder = "Password"/>
             <button>Sign In</button>
         </form>

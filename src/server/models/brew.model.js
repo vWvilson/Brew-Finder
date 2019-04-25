@@ -4,9 +4,17 @@ const Schema = mongoose.Schema;
 
 
 const brewSchema = new Schema ({ 
-    brewery: { type: String, unique: false, required: true },
+    selectedOption:  { 
+        type: Object, 
+        items:{
+            label : String,
+            value : String
+            }
+        },
     beer: { type: String, unique: false, required: true },
  });
+        
+        
 
 
 const Brew = mongoose.model('Brew', brewSchema)

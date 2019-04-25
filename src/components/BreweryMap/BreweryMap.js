@@ -67,7 +67,9 @@ class BreweryMap extends Component {
 
         this.state.venues.map(myVenue => {
 
-            const contentString = `${myVenue.venue.name}`
+            const contentString = 
+            `${myVenue.venue.name }`  
+        
 
             
 

@@ -2,7 +2,17 @@ import React from 'react';
 import "../BrewList/BrewList.css"
 import axios from 'axios';
 import ToolBar from "../Toolbar/Toolbar"
-// import beermap from "../Images/beermap.PNG"
+import Beermap from "../Images/beermap.PNG"
+import BreweryMap from "../BreweryMap/BreweryMap"
+
+
+const styles = {
+  main: {
+    'backgroundImage': `url(${Beermap})`,
+    'max-width': '100%',
+    'max-height': '100%',
+  }
+}
 
 export default class BrewList extends React.Component {
   state = {
@@ -23,8 +33,10 @@ export default class BrewList extends React.Component {
 
     <React.Fragment>
       <ToolBar />
+      <main style ={styles.main}>      
+{/* < BreweryMap /> */}
+      <div className = "application">
       <div className="picContainer">
-      {/* < img src = {beermap}   alt = "map"/> */}
       </div>
       <div className = "container">
       <div className = "beerlist">
@@ -32,14 +44,18 @@ export default class BrewList extends React.Component {
       <div className = "breweryBeers">
         { this.state.beers.map(beers =>
         <React.Fragment>
-        <h3><li>{beers.brewery}</li></h3>
+        <h4><li>{beers.brewery}</li></h4>
         <p><li>{beers.beer}</li></p>
       </React.Fragment>
           )}
+         
       </div>
       </div>
       </div>
-      
+          
+      </div>
+
+      </main>
       </React.Fragment>
 
     )

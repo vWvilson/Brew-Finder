@@ -1,5 +1,5 @@
  .beerlist {
-  width: 250px;                 
+  width: 250px;   
   border: 1px solid #f5d38e;    
   border-radius: 4px;           
   overflow: hidden;             
@@ -15,14 +15,15 @@
 .beerlist-header {
     color: black;
     text-align: center;
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 600;
     border-bottom: 1px solid #f5d38e;
     background-color: #ffc142;
     padding: 5px 10px;
   }
   .breweryBeers {
-      
+    font-weight: 600;
+
     display: flex;              
     flex-direction: column;     
     justify-content: center;    
@@ -34,9 +35,16 @@
   justify-content: center;
 }
 
+
+
 li {
     list-style-type: none;}  
   /* img {
     z-index: 100;
     position: relative;
   } */
+ body {
+   margin:0;
+   padding:0;
+
+ }
