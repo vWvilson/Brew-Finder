@@ -53,7 +53,7 @@ class BreweryMap extends Component {
 
         const map = new window.google.maps.Map(document.getElementById('map'), {
           center: {lat: 30.307182, lng: -97.755996},
-          zoom: 10
+          zoom: 8
 
 
         });
