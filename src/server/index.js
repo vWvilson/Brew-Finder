@@ -13,7 +13,7 @@ const SigninRoutes = require("./routes/signin.routes");
 const SignupRoutes = require("./routes/signup.routes");
 const BrewRoutes = require("./routes/brew.routes")
 
-const dev_db_url = 'mongodb://user:user123@ds139946.mlab.com:39946/brewfinder'
+const dev_db_url = 
 const mongoDB = process.env.MONGODB_URI || dev_db_url
 mongoose.connect(mongoDB,{ useNewUrlParser: true });
 mongoose.Promise = global.Promise;
