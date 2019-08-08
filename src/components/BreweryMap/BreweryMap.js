@@ -14,15 +14,15 @@ class BreweryMap extends Component {
     }
 
     renderMap =()=> {
-        loadScript( "https://maps.googleapis.com/maps/api/js? key=AIzaSyDjD-QmoPcvOaMKv4qUcSkmANZSzq82bWs&callback&callback=initMap")
+        loadScript( "")
         window.initMap = this.initMap;
     }
     
     getVenues=() => {
         const endPoint = "https://api.foursquare.com/v2/venues/explore?";
         const parameters = {
-            client_id:"5ELCQIWOQFDSFHTV5R0YOHE3ZTLY3Z3MZPYZBMJ0QZBJ0TLD",
-            client_secret:"G2PI00PVIA3KONNFCFF50MCYY2L0ROUBGPV1AWV4NKEEMOB2",
+            client_id:"",
+            client_secret:"",
             query:'brewery',
             near:"Austin",
             radius: 10000,
